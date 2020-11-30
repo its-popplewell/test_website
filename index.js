@@ -1,25 +1,21 @@
-console.log("Hello World!");
+let countHeads = 0;
+let countTails = 0;
+let counter = 0;
 
-var down = false;
-document.addEventListener(
-    "keydown",
-    function () {
-        if (down) return;
-        down = true;
-        console.log("SPACES");
-        // your magic code here
-    },
-    false
-);
+console.log('H');
 
-document.addEventListener(
-    "keyup",
-    function () {
-        down = false;
-    },
-    false
-);
+while (countHeads < 6 && countTails < 6) {
+    let choice = Math.floor(Math.random() * 2);
+    if (choice == 0) {
+        countHeads++;
+    } else if (choice == 1) {
+        countTails++;
+    }
+    counter++;
+    console.log(counter);
+}
 
-// document.body.addEventListener("keypress", (event) => {
-//     console.log("SPACES");
-// });
+document.getElementById('numFlips').innerText = counter;
+document.getElementById('numHeads').innerText = countHeads;
+document.getElementById('numTails').innerText = countTails;
+document.getElementById('prob').innerText = 'Calculate yourself.';
