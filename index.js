@@ -2,7 +2,7 @@ let countHeads = 0;
 let countTails = 0;
 let counter = 0;
 
-console.log('H');
+console.log('JAK WUZ HERE');
 
 while (countHeads < 6 && countTails < 6) {
     let choice = Math.floor(Math.random() * 2);
