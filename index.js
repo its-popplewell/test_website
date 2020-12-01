@@ -1,11 +1,12 @@
-let countHeads = 0;
-let countTails = 0;
-let counter = 0;
+function setup() {
+    noCanvas();
 
-const setup = () => {
     //does 10 simulations
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 15; i++) {
         let specialCase = false;
+        let countHeads = 0;
+        let countTails = 0;
+        let counter = 0;
         //runs until ...
         while (countHeads < 6 && countTails < 6) {
             let choice = Math.floor(Math.random() * 2);
@@ -44,12 +45,10 @@ const setup = () => {
             }
         }
 
-        createDiv('').id(`divider${i}`);
-        createP(specialCase ? 'Special case' : 'Normal Case').parent(`divider${i}`);
-        createP(`Number of Heads: ${countHeads}`).parent(`divider${i}`);
-        createP(`Number of Tails: ${countTails}`).parent(`divider${i}`);
-        createP(`Number of Flips: ${counter}`).parent(`divider${i}`);
+        createDiv().id(`div${i}`);
+        createP(specialCase ? 'Special case' : 'Normal Case').parent(`div${i}`);
+        createP(`Number of Tails: ${countTails}`).parent(`div${i}`);
+        createP(`Number of Heads: ${countHeads}`).parent(`div${i}`);
+        createP(`Number of Flips: ${counter}`).parent(`div${i}`);
     }
-};
-
-const draw = () => {};
+}
